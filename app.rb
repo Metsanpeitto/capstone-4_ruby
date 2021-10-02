@@ -1,6 +1,7 @@
 require_relative './texts'
 require_relative './list_items/list_items'
 require_relative './add_item/add_item'
+require_relative './store/store'
 
 class App
   include Texts
@@ -10,7 +11,6 @@ class App
     @music_albums = []
     @movies = []
     @games = []
-    @archive = []
     @genres = []
     @authors = []
     @sources = []
@@ -19,7 +19,7 @@ class App
   end
 
   def loop
-    # obtain_data
+    obtain_data
     Texts.text_intro
     number = gets.chomp
     running = true
@@ -47,7 +47,7 @@ class App
         number = '1'
 
       when '3'
-        # save_data
+        save_data
         running = false
       else
         Texts.text_intro

@@ -28,6 +28,7 @@ class MusicAlbum < Item
 
   # Deserialize JSON string by constructing new Foo object with arguments.
   def self.json_create(object)
+    puts object
     new(*object['data'])
   end
 end

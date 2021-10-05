@@ -2,21 +2,23 @@ class Game < Item
   attr_accessor :multiplayer, :last_played_at
 
   def initialize(multiplayer, last_played_at, item)
-    super(item[:id], item[:publish_date])
+    super(item[:id], item[:publish_date], item[:archived])
     @multiplayer = multiplayer
     @last_played_at = last_played_at
+    self.can_be_archived?
   end
 
-  def can_be_archived
+  def can_be_archived?
     response false
-    response = true if super.can_be_archived || ((Time.now - @last_played_at) / 1.year).round > 2
+    years = (Date.today - Date.xmlschema(@last_played_at))
+    response = true if super.can_be_archived? || years.to_i > 2
     response
   end
 
-    def to_json(*args)
+  def to_json(*args)
     {
       JSON.create_id => self.class.name,
-      'data' => [id: @id,                
+      'data' => [id: @id,
                  multiplayer: @multiplayer,
                  last_played_at: @last_played_at,
                  archived: @archived,
@@ -27,10 +29,5 @@ class Game < Item
                  label_title: @label.title,
                  label_color: @label.color]
     }.to_json(*args)
-  end
-
-  # Deserialize JSON string by constructing new Foo object with arguments.
-  def self.json_create(object)
-    new(*object['a'])
   end
 end

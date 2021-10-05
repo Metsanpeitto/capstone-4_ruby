@@ -2,13 +2,14 @@ class Movie < Item
   attr_accessor :silent
 
   def initialize(silent, item)
-    super(item[:id], item[:publish_date])
+    super(item[:id], item[:publish_date], item[:archived])
     @silent = silent
+    self.can_be_archived?
   end
 
-  def can_be_archived
+  def can_be_archived?
     response false
-    response = true if super.can_be_archived || @silent == true
+    response = true if super.can_be_archived? || @silent == true
     response
   end
 
@@ -25,10 +26,5 @@ class Movie < Item
                  label_title: @label.title,
                  label_color: @label.color]
     }.to_json(*args)
-  end
-
-  # Deserialize JSON string by constructing new Foo object with arguments.
-  def self.json_create(object)
-    new(*object['a'])
   end
 end

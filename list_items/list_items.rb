@@ -1,8 +1,8 @@
 require_relative '../texts'
 
-def list_items(option)
+def list_items
   Texts.text_list_intro
-  # option = gets.chomp
+  option = gets.chomp
   # option = '1'
   display_items(@books, 'books') if option == '1'
   display_items(@music_albums, 'music albums') if option == '2'
@@ -15,14 +15,22 @@ def list_items(option)
 end
 
 def display_items(data, category)
+  puts "Display archived"
+  puts @archived_items
   puts "List of #{category}"
-  message = nil
-
-  data.each_with_index do |item, index|
-    message = "Publisher: #{item.publisher} | Cover State: #{item.cover_state}" if category == 'books'
-    message = "On Spotify: #{item.on_spotify}" if category == 'music albums'
-    message = "Silent: #{item.silent}" if category == 'movies'
-    message = "Game: #{item.multiplayer} | Last timeplayed: #{item.last_played_at}" if category == 'game'
+  data.each_with_index do |data_item, index|
+    puts data_item.instance_of?(Array)
+    item = nil
+    item = if data_item.instance_of?(Array)
+             data_item[0]
+           else
+             data_item
+           end
+    puts item.class
+    message = "Publisher: #{item.publisher} | Cover State: #{item.cover_state}" if item.instance_of?(Book)
+    message = "On Spotify: #{item.on_spotify}" if item.instance_of?(MusicAlbum)
+    message = "Silent: #{item.silent}" if item.instance_of?(Movie)
+    message = "Game: #{item.multiplayer} | Last timeplayed: #{item.last_played_at}" if item.instance_of?(Game)
     message = "Author: #{item.first_name} #{item.second_name} " if category == 'authors'
     message = "Sources: #{item.name}" if category == 'sources'
 

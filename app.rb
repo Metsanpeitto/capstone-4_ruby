@@ -1,3 +1,4 @@
+require 'date'
 require_relative './texts'
 require_relative './list_items/list_items'
 require_relative './add_item/add_item'
@@ -15,6 +16,7 @@ class App
     @authors = []
     @sources = []
     @labels = []
+    @archived_items = []
     loop
   end
 
@@ -31,26 +33,22 @@ class App
         number = gets.chomp
 
       when '1'
-        list_items('1')
-        list_items('2')
-        list_items('3')
-        list_items('4')
-        list_items('5')
-        list_items('6')
+        list_items
         number = '0'
 
       when '2'
-        add_item('1')
-        add_item('2')
-        add_item('3')
-        add_item('4')
-        number = '1'
+        add_item
+        number = '0'
 
       when '3'
         save_data
         running = false
-      else
-        Texts.text_intro
+
+      when '4'
+        puts 'Input the command'
+        code = gets.chomp
+        eval(code)
+        number = '0'
       end
     end
   end

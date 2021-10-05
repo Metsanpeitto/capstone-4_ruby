@@ -1,14 +1,15 @@
 class Item
   attr_reader :genre, :author, :source, :label
 
-  def initialize(id, publish_date)
+  def initialize(id, publish_date, archived = false)
     @id = id
     @genre
     @author
     @source
     @label
     @publish_date = publish_date
-    @archived = false
+    @archived = archived
+    move_to_archive
   end
 
   def genre=(genre)
@@ -32,7 +33,9 @@ class Item
   end
 
   def can_be_archived?
-    ((Time.now - @publish_date) / 1.year).round > 10
+    puts @publish_date.class
+    puts @publish_date
+    (Date.today - Date.xmlschema(@publish_date)).to_i > 10
   end
 
   def move_to_archive

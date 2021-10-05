@@ -2,13 +2,14 @@ class MusicAlbum < Item
   attr_accessor :on_spotify
 
   def initialize(on_spotify, item)
-    super(item[:id], item[:publish_date])
+    super(item[:id], item[:publish_date], item[:archived])
     @on_spotify = on_spotify
+    self.can_be_archived?
   end
 
-  def can_be_archived
+  def can_be_archived?
     response false
-    response = true if super.can_be_archived || @cover_state == 'bad'
+    response = true if super.can_be_archived? || @cover_state == 'bad'
     response
   end
 
@@ -24,11 +25,5 @@ class MusicAlbum < Item
                  label_title: @label.title,
                  label_color: @label.color]
     }.to_json(*args)
-  end
-
-  # Deserialize JSON string by constructing new Foo object with arguments.
-  def self.json_create(object)
-    puts object
-    new(*object['data'])
   end
 end

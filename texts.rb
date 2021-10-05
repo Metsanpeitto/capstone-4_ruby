@@ -48,8 +48,8 @@ module Texts
     puts "Is the #{category} #{attribute}"
   end
 
-  def self.text_ci4(category)
-    puts "How many years have pass since you played this #{category} "
+  def self.text_ci4(_category)
+    puts 'When did you play it for last time (yyyy-mm-dd)?  '
   end
 
   def self.no_idea

@@ -1,12 +1,8 @@
 class Item
   attr_reader :genre, :author, :source, :label
 
-  def initialize(id, publish_date, archived = false)
+  def initialize(id, publish_date, archived: false)
     @id = id
-    @genre
-    @author
-    @source
-    @label
     @publish_date = publish_date
     @archived = archived
     move_to_archive

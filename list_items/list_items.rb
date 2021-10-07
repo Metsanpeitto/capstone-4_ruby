@@ -15,7 +15,7 @@ def list_items
 end
 
 def display_items(data, category)
-  puts "Display archived"
+  puts 'Display archived'
   puts @archived_items
   puts "List of #{category}"
   data.each_with_index do |data_item, index|

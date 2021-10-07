@@ -4,6 +4,7 @@
 
 "Ruby Capstone" is the final group project of the Microverse curriculum.It consists of a SQL data base and a ruby application.
 
+
 ## Learning objectives
 - Write unit tests using Rspec.
 - Understand an existing codebase in a way that allows for adding tests.

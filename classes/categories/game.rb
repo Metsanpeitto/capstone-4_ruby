@@ -5,7 +5,7 @@ class Game < Item
     super(item[:id], item[:publish_date], item[:archived])
     @multiplayer = multiplayer
     @last_played_at = last_played_at
-    self.can_be_archived?
+    can_be_archived?
   end
 
   def can_be_archived?

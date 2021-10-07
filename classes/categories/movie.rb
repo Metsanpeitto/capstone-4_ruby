@@ -4,7 +4,7 @@ class Movie < Item
   def initialize(silent, item)
     super(item[:id], item[:publish_date], item[:archived])
     @silent = silent
-    self.can_be_archived?
+    can_be_archived?
   end
 
   def can_be_archived?

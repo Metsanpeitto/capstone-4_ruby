@@ -29,8 +29,6 @@ class Item
   end
 
   def can_be_archived?
-    puts @publish_date.class
-    puts @publish_date
     (Date.today - Date.xmlschema(@publish_date)).to_i > 10
   end
 

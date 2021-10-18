@@ -4,12 +4,12 @@ class Movie < Item
   def initialize(silent, item)
     super(item[:id], item[:publish_date], item[:archived])
     @silent = silent
-    can_be_archived?
+    can_be_archived
   end
 
-  def can_be_archived?
-    response false
-    response = true if super.can_be_archived? || @silent == true
+  def can_be_archived
+    response = false
+    response = true if can_be_archived? || @silent == true
     response
   end
 
@@ -17,8 +17,9 @@ class Movie < Item
     {
       JSON.create_id => self.class.name,
       'data' => [id: @id,
-                 silent: @silent,
                  archived: @archived,
+                 publish_date: @publish_date, 
+                 silent: @silent,
                  genre_name: @genre.name,
                  author_first_name: @author.first_name,
                  author_last_name: @author.last_name,

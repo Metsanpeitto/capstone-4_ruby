@@ -76,6 +76,7 @@ def json_2_obj(json_array)
     key = json['json_class']
     data = json['data']
     item_data = { id: data[0]['id'],
+                  publish_date: data[0]['publish_date'],
                   archived: data[0]['archived'],
                   genre_name: data[0]['genre_name'],
                   author_first_name: data[0]['author_first_name'],
@@ -106,7 +107,7 @@ def json_2_obj(json_array)
 
     item = MusicAlbum.new(data[0]['on_spotify'], item_data)
     new_item = addAttributes(item, item_data)
-    @music_album << new_item
+    @music_albums << new_item
   end
 end
 

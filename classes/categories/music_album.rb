@@ -4,12 +4,12 @@ class MusicAlbum < Item
   def initialize(on_spotify, item)
     super(item[:id], item[:publish_date], item[:archived])
     @on_spotify = on_spotify
-    can_be_archived?
+    can_be_archived
   end
 
-  def can_be_archived?
-    response false
-    response = true if super.can_be_archived? || @cover_state == 'bad'
+  def can_be_archived
+    response = false
+    response = true if can_be_archived? || @cover_state == 'bad'
     response
   end
 
@@ -17,6 +17,8 @@ class MusicAlbum < Item
     {
       JSON.create_id => self.class.name,
       'data' => [id: @id,
+                 publish_date: @publish_date,
+                 archived: @archived,
                  on_spotify: @on_spotify,
                  genre_name: @genre.name,
                  author_first_name: @author.first_name,

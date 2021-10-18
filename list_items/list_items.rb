@@ -62,7 +62,7 @@ end
 def display_authors(data, category)
   puts "List of #{category}"
   data.each_with_index do |item, index|
-    puts "#{index})  First name: #{item.first_name} | Last name: #{data.last_name}
+    puts "#{index})  First name: #{item.first_name} | Last name: #{item.last_name}
 
     "
   end

@@ -58,3 +58,12 @@ def display_labels(data, category)
     "
   end
 end
+
+def display_authors(data, category)
+  puts "List of #{category}"
+  data.each_with_index do |item, index|
+    puts "#{index})  First name: #{item.first_name} | Last name: #{item.last_name}
+
+    "
+  end
+end

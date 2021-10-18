@@ -13,3 +13,30 @@ def list_items
   display_authors(@authors, 'authors') if option == '7'
   display_genres_sources(@sources, 'sources') if option == '8'
 end
+
+def display_items(data, category)
+  puts 'Display archived'
+  puts @archived_items
+  puts "List of #{category}"
+  data.each_with_index do |data_item, index|
+    puts data_item.instance_of?(Array)
+    item = nil
+    item = if data_item.instance_of?(Array)
+             data_item[0]
+           else
+             data_item
+           end
+    puts item.class
+    message = "Publisher: #{item.publisher} | Cover State: #{item.cover_state}" if item.instance_of?(Book)
+    message = "On Spotify: #{item.on_spotify}" if item.instance_of?(MusicAlbum)
+    message = "Silent: #{item.silent}" if item.instance_of?(Movie)
+    message = "Game: #{item.multiplayer} | Last timeplayed: #{item.last_played_at}" if item.instance_of?(Game)
+    message = "Author: #{item.first_name} #{item.second_name} " if category == 'authors'
+    message = "Sources: #{item.name}" if category == 'sources'
+
+    puts "#{index})  Title: #{item.label.title} | Genre: #{item.genre.name} |  Author: #{item.author.first_name}  #{item.author.last_name} | Source: #{item.source.name}
+    #{message}
+
+    "
+  end
+end

@@ -49,3 +49,12 @@ def display_genres_sources(data, category)
     "
   end
 end
+
+def display_labels(data, category)
+  puts "List of #{category}"
+  data.each_with_index do |item, index|
+    puts "#{index})  Title: #{item.title} | Number of items: #{data.size}
+
+    "
+  end
+end

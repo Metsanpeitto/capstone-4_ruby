@@ -11,7 +11,6 @@
 - Write Rspec unit tests with mocks.
 - Understand the TDD concept.
 
-
 It is written in ruby and is part of the tasks of the Microverse curriculum.
 
 

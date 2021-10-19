@@ -14,26 +14,26 @@ def add_item
   option = gets.chomp
   @category = nil
   puts 'What is the title on the label?'
-  # title = gets.chomp
-  title = 'Lokomotiv'
+  title = gets.chomp
+
   puts 'What is the color of the label?'
-  # color = gets.chomp
-  color = 'red'
+  color = gets.chomp
+
   puts 'What is the source? (ie: a shop, a friend...)'
-  # source = gets.chomp
-  source = 'online shop'
+  source = gets.chomp
+
   puts 'What genre is it?'
-  # genre = gets.chomp
-  genre = 'terror'
+  genre = gets.chomp
+
   puts "What is the author's first name?"
-  # first_name = gets.chomp
-  first_name = 'Vlad'
+  first_name = gets.chomp
+
   puts "What is the author's last name?"
-  # last_name = gets.chomp
-  last_name = 'Volkovich'
+  last_name = gets.chomp
+
   puts 'When was it published (yyyy-mm-dd)?'
-  # publish_date = gets.chomp
-  publish_date = '2021-10-18'
+  publish_date = gets.chomp
+
 
   @item = Item.new(Time.now.to_i, publish_date)
   new_label = Label.new(title, color)

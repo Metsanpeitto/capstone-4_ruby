@@ -2,9 +2,8 @@ require_relative '../texts'
 require_relative '../classes/categories/movie'
 
 def create_movie(item)
-  Texts.text_ci3('movie', 'silent?')
+  Texts.text_ci3('movie', 'silent? (y / n)')
   answer = gets.chomp
-  # answer = 'y'
   silent = true if answer == 'y'
   movie = Movie.new(silent, item)
   @movies << movie

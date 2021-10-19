@@ -16,5 +16,4 @@ describe Genre do
       expect(@genre.items[0]).to(eq(@item))
     end
   end
-
 end

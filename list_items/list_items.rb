@@ -1,9 +1,8 @@
 require_relative '../texts'
-
+# rubocop:disable all
 def list_items
   Texts.text_list_intro
   option = gets.chomp
-  # option = '1'
   display_items(@books, 'books') if option == '1'
   display_items(@music_albums, 'music albums') if option == '2'
   display_items(@movies, 'movies') if option == '3'
@@ -20,7 +19,6 @@ def display_items(data, category)
   puts "List of #{category}"
   data.each_with_index do |data_item, index|
     puts data_item.instance_of?(Array)
-    item = nil
     item = if data_item.instance_of?(Array)
              data_item[0]
            else
@@ -41,6 +39,7 @@ def display_items(data, category)
   end
 end
 
+# rubocop:enable all
 def display_genres_sources(data, category)
   puts "List of #{category}"
   data.each_with_index do |item, index|

@@ -3,13 +3,29 @@
 ![Microverse](https://img.shields.io/badge/Microverse-blueviolet)
 
 "Ruby Capstone" is the final group project of the Microverse curriculum.It consists of a SQL data base and a ruby application.
+In this project, we created a console app that help us to keep a record of different types of things we won: books, music albums, movies, and games.
+Everything is based on the UML class diagram presented below. The data is stored in JSON files there is also prepared a database with tables structure analogical to the program's class structure.
 
 
-## Learning objectives
-- Write unit tests using Rspec.
-- Understand an existing codebase in a way that allows for adding tests.
-- Write Rspec unit tests with mocks.
-- Understand the TDD concept.
+## The learning objectives of this project are
+- Insert and query data in SQL.
+- Use primary key & foreign key mechanisms for joining tables.
+- Understand the different types of relationships between tables.
+- Query multiple tables.
+- Prepare complex queries that answer analytical questions.
+- Run a program using the command line.
+- Use Ruby syntax for basic programming operations.
+- Apply Ruby best practices and language style guides in code.
+- Describe the SOLID principles of OOP.
+- Implement classes and objects in Ruby.
+- Understand the four main principles of OOP.
+- Implement encapsulation and inheritance with Ruby.
+- Create a UML class diagram.
+- Explain the difference between associations, aggregations, and composition in OOP.
+- Set up associations between classes and objects.
+- Store data in files.
+- Build interactive console apps.
+- Recognize the value of making equal contributions to group projects to produce the best outcome. 
 
 It is written in ruby and is part of the tasks of the Microverse curriculum.
 
@@ -85,6 +101,19 @@ If you are non a technical person you can download the zip file.
 - Twitter: [@metsanpeitto](https://twitter.com/home)
 - LinkedIn: [Abraham Rodriguez](https://www.linkedin.com/in/abraham-rodriguez-3283a319a/)
 - Portfolio: [Waldenberg](https://portfolio.waldenberginc.com)
+
+👤 **Aganze Mataba Henri**
+
+- GitHub: [@hiromataba](https://github.com/hiromataba)
+- Twitter: [@hiromataba](https://twitter.com/MatabaHiro)
+- LinkedIn: [@hiromataba](https://www.linkedin.com/in/aganzemataba/)
+
+
+👤 **Polina Stamenova**
+
+- GitHub: [@githubhandle](https://github.com/PolinaStamenova)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/polina-stamenova-a60766112/)
+
 
 =======
 

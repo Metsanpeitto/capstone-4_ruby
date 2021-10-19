@@ -20,7 +20,7 @@ class Movie < Item
       JSON.create_id => self.class.name,
       'data' => [id: @id,
                  archived: @archived,
-                 publish_date: @publish_date, 
+                 publish_date: @publish_date,
                  silent: @silent,
                  genre_name: @genre.name,
                  author_first_name: @author.first_name,

@@ -16,6 +16,7 @@ def set_path(category, data)
   File.write(category, JSON.dump(data), mode: 'w')
 end
 
+# rubocop:disable all
 def save_data
   if @books.size.positive?
     books_json = items_2_json(@books)
@@ -56,7 +57,6 @@ end
 def items_2_json(args)
   items = []
   args&.each_with_index do |o, _index|
-    # item = item_2_json(o)
     items.push(o)
   end
   if items.size.positive?
@@ -72,7 +72,6 @@ end
 
 def json_2_obj(json_array)
   json_array&.each do |json|
-    # json = JSON.parse(raw)
     key = json['json_class']
     data = json['data']
     item_data = { id: data[0]['id'],
@@ -128,3 +127,4 @@ def addAttributes(item, item_data)
   item.author = new_author
   item
 end
+# rubocop:enable all

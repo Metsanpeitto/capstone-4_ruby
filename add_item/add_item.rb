@@ -8,7 +8,7 @@ require_relative '../classes/attributes/author'
 require_relative '../classes/attributes/genre'
 require_relative '../classes/attributes/label'
 require_relative '../classes/attributes/source'
-
+# rubocop:disable all
 def add_item
   Texts.text_cr_categories
   option = gets.chomp
@@ -73,3 +73,4 @@ def add_item
   item.author = new_author
   @items << item
 end
+# rubocop:enable all

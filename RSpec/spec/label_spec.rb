@@ -17,6 +17,6 @@ describe Label do
     end
     it 'returns #@items[0] matches "@items"' do
       expect(@label.items[0]).to(eq(@item))
-    end    
+    end
   end
 end

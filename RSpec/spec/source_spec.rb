@@ -4,13 +4,16 @@ require './classes/item'
 describe Source do
   before :each do
     @item = Item.new(Time.now.to_i, '2000-10-10', true)
-    source = Source.new('Shop')
-    @item.source = source
+    @source = Source.new('Shop')
+    @item.source = @source
   end
 
   describe '#test methods of class source' do
     it 'returns #source name matches "Shop"' do
       expect(@item.source.name).to(eq('Shop'))
+    end
+    it 'returns #@items[0] matches "@items"' do
+      expect(@source.items[0]).to(eq(@item))
     end
   end
 end

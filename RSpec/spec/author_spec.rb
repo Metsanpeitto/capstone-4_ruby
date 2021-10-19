@@ -16,5 +16,8 @@ describe Author do
     it 'returns #last_name matches "Kaukkua"' do
       expect(@item.author.last_name).to(eq('Kaukkua'))
     end
+    it 'returns #@items[0] matches "@items"' do
+      expect(@author.items[0]).to(eq(@item))
+    end
   end
 end

@@ -1,3 +1,5 @@
+require './classes/item'
+
 class Movie < Item
   attr_accessor :silent
 

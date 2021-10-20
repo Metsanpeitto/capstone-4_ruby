@@ -7,8 +7,7 @@ In this project, we created a console app that help us to keep a record of diffe
 Everything is based on the UML class diagram presented below. The data is stored in JSON files there is also prepared a database with tables structure analogical to the program's class structure.
 
 ## Introduction video
-
-![Introduction video](https://drive.google.com/file/d/1yxTAqDtWYDM3Qbl1bmdOX20YGp79NP4a/view?usp=sharing)
+[Introduction video](https://drive.google.com/file/d/1yxTAqDtWYDM3Qbl1bmdOX20YGp79NP4a/view?usp=sharing)
 
 ## The learning objectives of this project are
 - Insert and query data in SQL.

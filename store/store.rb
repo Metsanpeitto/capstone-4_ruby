@@ -17,33 +17,26 @@ def set_path(category, data)
 end
 
 # rubocop:disable all
+def parse_store(item,name)
+  if item.size.positive?
+    item_json = items_2_json(item)
+    set_path("./store/#{name}.json", item_json) if item_json.size.positive?
+  end
+end
+
 def save_data
-  if @books.size.positive?
-    books_json = items_2_json(@books)
-    set_path('./store/books.json', books_json) if books_json.size.positive?
-  end
-
-  if @games.size.positive?
-    game_json = items_2_json(@games)
-    set_path('./store/games.json', game_json) if game_json.size.positive?
-  end
-
-  if @movies.size.positive?
-    movie_json = items_2_json(@movies)
-    set_path('./store/movies.json', movie_json) if movie_json.size.positive?
-  end
-
-  if @music_albums.size.positive?
-    music_album_json = items_2_json(@music_albums)
-    set_path('./store/music_albums.json', music_album_json) if music_album_json.size.positive?
-  end
+  parse_store(@books, 'books')
+  parse_store(@games, 'games')
+  parse_store(@games, 'games')
+  parse_store(@movies, 'movies')
+  parse_store(@music_albums, 'music_albums')
 end
 
 def obtain_data
   books = get_path('./store/books.json')
   games = get_path('./store/games.json')
   movies = get_path('./store/movies.json')
-  music_albums = get_path('./store/music_albums.json')
+  music_albums = get_path('./store/music_albums.json')  
 
   json_2_obj(JSON[books]) if books
 

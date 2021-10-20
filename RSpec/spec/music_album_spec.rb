@@ -14,5 +14,14 @@ describe MusicAlbum do
     it 'returns true if publish_date is more than 10 years' do
       expect(@music_album.can_be_archived).to(eq(true))
     end
+    it 'when published less than 10 years ago and on Spotify' do
+      item = { id: Time.now.to_i, publish_date: '2018-10-10', archived: true }
+      @music_album = MusicAlbum.new(true, item)
+      expect(@music_album.can_be_archived).to(eq(false))
+      expect(@music_album.on_spotify).to(eq(true))
+    end
+    it 'when on Spotify' do
+      expect(@music_album.on_spotify).to(eq(true))
+    end
   end
 end

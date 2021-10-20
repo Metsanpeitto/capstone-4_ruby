@@ -53,11 +53,6 @@ If you want a copy of this file go to the github repository and download it from
 - [`git clone https://github.com/Metsanpeitto/capstone-4_ruby`](https://github.com/Metsanpeitto/capstone-4_ruby)
 
 
-### Live
-
-[Live](https://github.com/Metsanpeitto/capstone-4_ruby/)
-
-
 ### Setup
 
 ```cmd

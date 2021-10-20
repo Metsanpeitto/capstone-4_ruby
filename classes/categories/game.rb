@@ -12,8 +12,8 @@ class Game < Item
 
   def can_be_archived
     response = false
-    years = (Date.today - Date.xmlschema(@last_played_at))
-    response = true if can_be_archived? || years.to_i > 2
+    difference_in_days = (Date.today - Date.xmlschema(@last_played_at)).to_i
+    response = true if can_be_archived? || (difference_in_days / 365.25).to_i > 2
     response
   end
 

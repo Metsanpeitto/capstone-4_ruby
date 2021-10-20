@@ -15,5 +15,8 @@ describe Genre do
     it 'returns #@items[0] matches "@items"' do
       expect(@genre.items[0]).to(eq(@item))
     end
+    it 'it should add an item' do
+      expect(@genre.add_item(@item)).to(eq(@genre.items))
+    end
   end
 end

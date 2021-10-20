@@ -1,7 +1,7 @@
 require 'date'
 
 class Item
-  attr_reader :genre, :author, :source, :label
+  attr_reader :genre, :author, :source, :label, :archived
 
   # rubocop: disable all
   def initialize(id, publish_date, archived = false)
@@ -33,7 +33,8 @@ class Item
   end
 
   def can_be_archived?
-    (Date.today - Date.xmlschema(@publish_date)).to_i > 10
+    difference_in_days = (Date.today - Date.xmlschema(@publish_date)).to_i
+    (difference_in_days / 365.25).to_i > 10
   end
 
   def move_to_archive

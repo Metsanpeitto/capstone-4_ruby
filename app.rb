@@ -19,7 +19,7 @@ class App
     @archived_items = []
     loop
   end
-# rubocop:disable all
+# rubocop: disable all
   def loop
     obtain_data
     Texts.text_intro
@@ -47,9 +47,7 @@ class App
       when '4'
         puts 'Input the command'
         code = gets.chomp
-        # rubocop:disable all
         eval(code)
-        # rubocop:enable all
         number = '0'
       end
     end

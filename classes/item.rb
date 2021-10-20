@@ -2,14 +2,14 @@ require 'date'
 
 class Item
   attr_reader :genre, :author, :source, :label
-
-  def initialize(id, publish_date, archived: false)
+  # rubocop: disable all
+  def initialize(id, publish_date, archived = false)
     @id = id
     @publish_date = publish_date
     @archived = archived
     move_to_archive
   end
-
+  # rubocop: enable all
   def genre=(genre)
     @genre = genre
     @genre.add_item(self)

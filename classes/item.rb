@@ -3,7 +3,7 @@ require 'date'
 class Item
   attr_reader :genre, :author, :source, :label, :archived
 
-  # rubocop: disable all
+  # rubocop: disable Style/OptionalBooleanParameter
   def initialize(id, publish_date, archived = false)
     @id = id
     @publish_date = publish_date
@@ -11,7 +11,7 @@ class Item
     move_to_archive
   end
 
-  # rubocop: enable all
+  # rubocop: enable Style/OptionalBooleanParameter
   def genre=(genre)
     @genre = genre
     @genre.add_item(self)

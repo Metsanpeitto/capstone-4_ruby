@@ -2,6 +2,7 @@ require 'date'
 
 class Item
   attr_reader :genre, :author, :source, :label
+
   # rubocop: disable all
   def initialize(id, publish_date, archived = false)
     @id = id
@@ -9,6 +10,7 @@ class Item
     @archived = archived
     move_to_archive
   end
+
   # rubocop: enable all
   def genre=(genre)
     @genre = genre
